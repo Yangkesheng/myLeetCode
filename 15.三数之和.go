@@ -3,42 +3,39 @@
  *
  * [15] 三数之和
  */
-
 package main
 
-import "sort"
+import (
+	"sort"
+)
 
 // @lc code=start
 func threeSum(nums []int) [][]int {
-	if len(nums) < 3 {
-		return nil
-	}
+	res, l := make([][]int, 0), len(nums)
 
 	sort.Ints(nums)
-	rtn := make([][]int, 0)
-
-	for i := 0; i <= len(nums)-3; i++ {
+	for i := 0; i < l-2; i++ {
 		if i != 0 && nums[i] == nums[i-1] {
 			continue
 		}
 
-		for start, end := i+1, len(nums)-1; start < end; start++ {
-			if start > i+1 && nums[start] == nums[start-1] {
-				continue
-			}
-
-			for end-1 > start && nums[i]+nums[start]+nums[end] > 0 {
+		for start, end := i+1, l-1; start < end; start++ {
+			total := nums[i] + nums[start] + nums[end]
+			if total == 0 {
+				res = append(res, []int{nums[i], nums[start], nums[end]})
+			} else if total > 0 {
 				end--
+			} else {
+				break
 			}
-
-			if nums[i]+nums[start]+nums[end] == 0 {
-				rtn = append(rtn, []int{nums[i], nums[start], nums[end]})
-			}
-
 		}
+
 	}
 
-	return rtn
+	return res
 }
 
 // @lc code=end
+// func main() {
+// 	fmt.Println(threeSum([]int{-1, 0, 1, 2, -1, -4}))
+// }

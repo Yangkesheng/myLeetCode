@@ -3,6 +3,7 @@
  *
  * [142] 环形链表 II
  */
+package main
 
 // @lc code=start
 /**
@@ -13,7 +14,31 @@
  * }
  */
 func detectCycle(head *ListNode) *ListNode {
-    
-}
-// @lc code=end
+	slow, speed := head, head
 
+	for slow != nil && speed != nil {
+		speed, slow = speed.Next, slow.Next
+
+		if speed == nil {
+			break
+		} else {
+			speed = speed.Next
+		}
+
+		if slow == speed {
+			break
+		}
+	}
+
+	if slow == nil || speed == nil {
+		return nil
+	}
+
+	for speed = head; speed != slow; {
+		speed, slow = speed.Next, slow.Next
+	}
+
+	return slow
+}
+
+// @lc code=end
