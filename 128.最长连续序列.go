@@ -27,15 +27,9 @@ func longestConsecutive(nums []int) int {
 	return res
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
 
-	return b
-}
 
 // @lc code=end
-func main() {
-	longestConsecutive([]int{4, 200, 1, 3, 2})
-}
+// func main() {
+// 	longestConsecutive([]int{4, 200, 1, 3, 2})
+// }

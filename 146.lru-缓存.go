@@ -18,7 +18,7 @@ type kv struct {
 	k, v int
 }
 
-func Constructor(capacity int) LRUCache {
+func ConstructorLru(capacity int) LRUCache {
 	return LRUCache{
 		data:     make(map[int]*list.Element),
 		capacity: capacity,

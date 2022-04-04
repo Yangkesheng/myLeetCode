@@ -3,6 +3,7 @@
  *
  * [136] 只出现一次的数字
  */
+package main
 
 // @lc code=start
 func singleNumber(nums []int) int {
@@ -14,5 +15,5 @@ func singleNumber(nums []int) int {
 
 	return res
 }
-// @lc code=end
 
+// @lc code=end
