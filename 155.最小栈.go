@@ -6,54 +6,54 @@
 package main
 
 // @lc code=start
-type MinStack struct {
-	stack []int
-	min   []int
-}
+// type MinStack struct {
+// 	stack []int
+// 	min   []int
+// }
 
-func Constructor() MinStack {
-	return MinStack{
-		stack: make([]int, 0),
-		min:   make([]int, 0),
-	}
+// func Constructor() MinStack {
+// 	return MinStack{
+// 		stack: make([]int, 0),
+// 		min:   make([]int, 0),
+// 	}
 
-}
+// }
 
-func (this *MinStack) Push(val int) {
-	this.stack = append(this.stack, val)
+// func (this *MinStack) Push(val int) {
+// 	this.stack = append(this.stack, val)
 
-	l := len(this.min)
-	if l == 0 || this.min[l-1] >= val {
-		this.min = append(this.min, val)
-	} else {
-		for k, v := range this.min {
-			if val <= v {
-				this.min = append(this.min[:k], append([]int{val}, this.min[k:]...)...)
-				break
-			}
-		}
-	}
-}
+// 	l := len(this.min)
+// 	if l == 0 || this.min[l-1] >= val {
+// 		this.min = append(this.min, val)
+// 	} else {
+// 		for k, v := range this.min {
+// 			if val <= v {
+// 				this.min = append(this.min[:k], append([]int{val}, this.min[k:]...)...)
+// 				break
+// 			}
+// 		}
+// 	}
+// }
 
-func (this *MinStack) Pop() {
-	pop := this.stack[len(this.stack)-1]
-	this.stack = this.stack[:len(this.stack)-1]
+// func (this *MinStack) Pop() {
+// 	pop := this.stack[len(this.stack)-1]
+// 	this.stack = this.stack[:len(this.stack)-1]
 
-	for k, v := range this.min {
-		if v == pop {
-			this.min = append(this.min[:k], this.min[k+1:]...)
-			break
-		}
-	}
-}
+// 	for k, v := range this.min {
+// 		if v == pop {
+// 			this.min = append(this.min[:k], this.min[k+1:]...)
+// 			break
+// 		}
+// 	}
+// }
 
-func (this *MinStack) Top() int {
-	return this.stack[len(this.stack)-1]
-}
+// func (this *MinStack) Top() int {
+// 	return this.stack[len(this.stack)-1]
+// }
 
-func (this *MinStack) GetMin() int {
-	return this.min[len(this.min)-1]
-}
+// func (this *MinStack) GetMin() int {
+// 	return this.min[len(this.min)-1]
+// }
 
 /**
  * Your MinStack object will be instantiated and called as such:
