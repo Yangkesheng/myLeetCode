@@ -67,7 +67,6 @@ func merger(h1, h2 *ListNode) *ListNode {
 
 	if h2 != nil {
 		now.Next = h2
-
 	}
 
 	return dummyHead.Next
