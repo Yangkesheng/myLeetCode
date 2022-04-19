@@ -14,13 +14,13 @@ func max(a, b int) int {
 	return b
 }
 
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
+// func min(a, b int) int {
+// 	if a < b {
+// 		return a
+// 	}
 
-	return b
-}
+// 	return b
+// }
 
 func maxProduct(nums []int) int {
 	res, maxF, minF := nums[0], nums[0], nums[0]
