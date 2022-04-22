@@ -3,7 +3,6 @@
  *
  * [208] 实现 Trie (前缀树)
  */
-package main
 
 // @lc code=start
 type Trie struct {
