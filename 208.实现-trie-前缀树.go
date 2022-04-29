@@ -3,56 +3,57 @@
  *
  * [208] 实现 Trie (前缀树)
  */
+package main
 
 // @lc code=start
-type Trie struct {
-	isEnd bool
-	Next  [26]*Trie
-}
+// type Trie struct {
+// 	isEnd bool
+// 	Next  [26]*Trie
+// }
 
-func Constructor() Trie {
-	return Trie{}
-}
+// func Constructor() Trie {
+// 	return Trie{}
+// }
 
-func (this *Trie) Insert(word string) {
-	now := this
+// func (this *Trie) Insert(word string) {
+// 	now := this
 
-	for _, ch := range word {
-		if now.Next[ch-'a'] == nil {
-			now.Next[ch-'a'] = &Trie{}
-		}
+// 	for _, ch := range word {
+// 		if now.Next[ch-'a'] == nil {
+// 			now.Next[ch-'a'] = &Trie{}
+// 		}
 
-		now = now.Next[ch-'a']
-	}
+// 		now = now.Next[ch-'a']
+// 	}
 
-	now.isEnd = true
-}
+// 	now.isEnd = true
+// }
 
-func (this *Trie) Search(word string) bool {
-	now := this
-	for _, ch := range word {
-		if now.Next[ch-'a'] == nil {
-			return false
-		}
+// func (this *Trie) Search(word string) bool {
+// 	now := this
+// 	for _, ch := range word {
+// 		if now.Next[ch-'a'] == nil {
+// 			return false
+// 		}
 
-		now = now.Next[ch-'a']
-	}
+// 		now = now.Next[ch-'a']
+// 	}
 
-	return now.isEnd
-}
+// 	return now.isEnd
+// }
 
-func (this *Trie) StartsWith(prefix string) bool {
-	now := this
-	for _, ch := range prefix {
-		if now.Next[ch-'a'] == nil {
-			return false
-		}
+// func (this *Trie) StartsWith(prefix string) bool {
+// 	now := this
+// 	for _, ch := range prefix {
+// 		if now.Next[ch-'a'] == nil {
+// 			return false
+// 		}
 
-		now = now.Next[ch-'a']
-	}
+// 		now = now.Next[ch-'a']
+// 	}
 
-	return true
-}
+// 	return true
+// }
 
 /**
  * Your Trie object will be instantiated and called as such:

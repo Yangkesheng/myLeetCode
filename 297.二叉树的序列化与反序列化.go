@@ -80,6 +80,6 @@ func (this *Codec) buildTree(list *[]string) *TreeNode {
  * ans := deser.deserialize(data);
  */
 // @lc code=end
-func main() {
-	
-}
+// func main() {
+
+// }
