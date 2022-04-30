@@ -5,8 +5,6 @@
  */
 package main
 
-import "fmt"
-
 // @lc code=start
 func lengthOfLIS(nums []int) int {
 	tail := make([]int, 0, len(nums))
@@ -17,8 +15,6 @@ func lengthOfLIS(nums []int) int {
 		} else {
 			tail[idx] = v
 		}
-
-		fmt.Println(tail)
 	}
 
 	return len(tail)
@@ -43,6 +39,6 @@ func binarySearch(tail []int, target int) int {
 }
 
 // @lc code=end
-func main() {
-	lengthOfLIS([]int{0, 1, 0, 3, 2, 3})
-}
+// func main() {
+// 	lengthOfLIS([]int{0, 1, 0, 3, 2, 3})
+// }
