@@ -6,44 +6,40 @@
 
 package main
 
-import (
-	"math"
-)
+// type TreeNode struct {
+// 	Val   int
+// 	Left  *TreeNode
+// 	Right *TreeNode
+// }
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+// // @lc code=start
 
-// @lc code=start
+// func isValidBST(root *TreeNode) bool {
+// 	pre := math.MinInt64
 
-func isValidBST(root *TreeNode) bool {
-	pre := math.MinInt64
+// 	return dfs98(root, &pre)
+// }
 
-	return dfs98(root, &pre)
-}
+// func dfs98(root *TreeNode, pre *int) bool {
+// 	if root == nil {
+// 		return true
+// 	}
 
-func dfs98(root *TreeNode, pre *int) bool {
-	if root == nil {
-		return true
-	}
+// 	if !dfs98(root.Left, pre) {
+// 		return false
+// 	}
 
-	if !dfs98(root.Left, pre) {
-		return false
-	}
+// 	if *pre >= root.Val {
+// 		return false
+// 	}
+// 	*pre = root.Val
 
-	if *pre >= root.Val {
-		return false
-	}
-	*pre = root.Val
+// 	if !dfs98(root.Right, pre) {
+// 		return false
+// 	}
 
-	if !dfs98(root.Right, pre) {
-		return false
-	}
-
-	return true
-}
+// 	return true
+// }
 
 // @lc code=end
 // func main() {

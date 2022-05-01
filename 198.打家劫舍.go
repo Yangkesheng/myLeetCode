@@ -5,21 +5,19 @@
  */
 package main
 
-import "math"
-
 // @lc code=start
-func rob(nums []int) int {
-	max, pre := 0.0, 0.0
+// func rob(nums []int) int {
+// 	max, pre := 0.0, 0.0
 
-	for _, v := range nums {
-		preMax := max
-		max = math.Max(pre+float64(+v), float64(max))
+// 	for _, v := range nums {
+// 		preMax := max
+// 		max = math.Max(pre+float64(v), float64(max))
 
-		pre = preMax
-	}
+// 		pre = preMax
+// 	}
 
-	return int(max)
-}
+// 	return int(max)
+// }
 
 // @lc code=end
 // func main() {
