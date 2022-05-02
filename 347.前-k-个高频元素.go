@@ -7,7 +7,6 @@ package main
 
 import (
 	"container/heap"
-	"fmt"
 )
 
 // @lc code=start
@@ -69,6 +68,6 @@ func (pq *priorityQueue) Push(x interface{}) {
 }
 
 // @lc code=end
-func main() {
-	fmt.Println(topKFrequent([]int{3, 0, 1, 0}, 1))
-}
+// func main() {
+// 	fmt.Println(topKFrequent([]int{3, 0, 1, 0}, 1))
+// }
